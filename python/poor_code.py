@@ -10,13 +10,15 @@ def x(a, b, c):
     print("Hello, " + a + " " + b + " " + c)
 
 def locateTopEven(arr):
-    topEven = 0
-    indexOfTopEven = 0
-    for i in range(0, len(arr)):
+    topEven = float('-inf')  # Start with negative infinity instead of 0
+    indexOfTopEven = -1      # Use -1 to indicate "not found" initially
+    
+    for i in range(len(arr)):  # Simplified range
         n = arr[i]
-        if n > topEven and n % 2 == 0:
+        if n % 2 == 0 and (topEven == float('-inf') or n > topEven):
             topEven = n
             indexOfTopEven = i
+            
     return indexOfTopEven
 
 def   evaluate_conditions(a: bool, b: bool, c: int) :
