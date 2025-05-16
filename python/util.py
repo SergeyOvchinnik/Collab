@@ -30,6 +30,7 @@ def three_x_plus_one(x):
 # Prints the number n to console n times
 # E.g. for n = 3, it should print "3 3 3"
 def print_n_n_times(n):
+    print(" ".join(str(n) * n))
     pass
 
 # Returns n to the power of e
@@ -42,3 +43,5 @@ def power(n, e):
 # E.g. ordered(1, 2, 3, 4) is true but ordered(1, 2, 4, 3) is false
 def ordered(a, b, c, d):
     return False
+
+print_n_n_times(3)
