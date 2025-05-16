@@ -39,7 +39,7 @@ def print_n_n_times(n):
 # Returns n to the power of e
 # E.g. power(2, 3) should return 8
 def power(n, e):
-    return 0
+    print(n**e)
 
 # Returns true if values a b c d are in ascending order
 # False otherwise
@@ -47,4 +47,4 @@ def power(n, e):
 def ordered(a, b, c, d):
     return False
 
-print_n_n_times(3)
+power(3,2)
