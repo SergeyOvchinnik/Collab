@@ -54,7 +54,7 @@ def print_stats(arr):
 
     print("Mean = "+str(mean))
 
-    sorted = b(arr)
+    sorted = bubble_sort_algorithm(arr)
 
     median = 0
 
@@ -95,7 +95,9 @@ def print_stats(arr):
 
     print("Standard Deviation = " + str(standard_deviation))
 
-def b(arr):
+#A bubble sort algorithm sorts the numbers in the list in ascending order by going through the list
+# and swapping adjacent elements if they are in the wrong order.
+def bubble_sort_algorithm(arr):
     sorting_arr = arr.copy()
     for i in range(0, len(sorting_arr) - 1):
         for j in range(i + 1, len(sorting_arr)):
