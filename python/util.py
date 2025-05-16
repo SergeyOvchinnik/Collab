@@ -25,7 +25,10 @@ def max_plus_min(arr):
 # If x is even, returns x/2
 # If x is odd, returns 3x+1
 def three_x_plus_one(x):
-    return 0
+    if x % 2 == 0:
+        return x // 2
+    else:
+        return 3 * x + 1
 
 # Prints the number n to console n times
 # E.g. for n = 3, it should print "3 3 3"
