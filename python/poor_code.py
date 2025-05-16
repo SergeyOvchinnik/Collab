@@ -54,7 +54,7 @@ def print_stats(arr):
 
     print("Mean = "+str(mean))
 
-    sorted = b(arr)
+    sorted = bubble_sort_algorithm(arr)
 
     median = 0
 
