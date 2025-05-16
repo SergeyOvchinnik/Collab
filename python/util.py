@@ -2,6 +2,7 @@
 def count_occurences(arr, n):
     return 0
 
+
 # Checks if the value n is between top and bottom
 # Returns true if it is, false otherwise
 def in_range(n, top, bottom):
@@ -18,9 +19,10 @@ def print_array_reverse(arr):
     pass
 
 # Returns the sum of the smallest and largest numbers form an array
-# E.g. for array [1, 6, 8, 9] it returns 10
 def max_plus_min(arr):
-    return min(arr) + max(arr)
+    if not arr:
+        raise ValueError("Array should not be empty")
+    return max(arr) + min(arr)
 
 # If x is even, returns x/2
 # If x is odd, returns 3x+1
