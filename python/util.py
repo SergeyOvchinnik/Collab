@@ -20,7 +20,7 @@ def print_array_reverse(arr):
 # Returns the sum of the smallest and largest numbers form an array
 # E.g. for array [1, 6, 8, 9] it returns 10
 def max_plus_min(arr):
-    return 0
+    return min(arr) + max(arr)
 
 # If x is even, returns x/2
 # If x is odd, returns 3x+1
