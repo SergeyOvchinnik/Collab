@@ -3,7 +3,27 @@ public class Utilities {
 	
 	// Counts how many times the value n appears in the array arr
 	public static int countOccurences(int[] arr, int n) {
-		return 0; // TODO: implement
+		int count = 0;
+
+			for (int i = 0; i < arr.length; i++) {
+				if (arr[i] == n) {
+				count++;
+				}
+						
+			}
+
+		return count; // TODO: implement
+	}
+	
+	
+    	public static void main(String[] args) {
+
+        	int[] arr = {1, 2, 3, 2, 2, 4};
+
+        	int result = Utilities.countOccurences(arr, 2);
+
+        	System.out.println(result); 
+    	}
 	}
 	
 	// Checks if the value n is between top and bottom
