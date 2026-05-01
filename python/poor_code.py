@@ -90,15 +90,16 @@ def print_stats(arr):
 
     print("Standard Deviation = " + str(standard_deviation))
 
-def b(arr):
-    sorting_arr = arr.copy()
-    for i in range(0, len(sorting_arr) - 1):
-        for j in range(i + 1, len(sorting_arr)):
-            if sorting_arr[i] > sorting_arr[j]:
-                temp = sorting_arr[i]
-                sorting_arr[i] = sorting_arr[j]
-                sorting_arr[j] = temp
-    return sorting_arr
+def sort_array(arr):
+    arr = arr.copy() #avoid mutatimg original list 
+    n = len(arr)
+
+    for i in range(n - 1):
+        for j in range(i + 1, n):
+            if arr[i] > arr[j]:
+                arr[i], arr[j] = arr[j], arr[i]
+                
+    return arr
 
 # True for 2, 3, 5, 7, 11, 13 ...
 # False for 1, 4, 6, 8, 9, 10, 12 ...
