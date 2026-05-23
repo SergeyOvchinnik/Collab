@@ -29,7 +29,7 @@ public class PoorCode {
 		
 		System.out.println();
 		
-		double[] arr2 = new double[] {3.0, 4.0, 3.5, 4.0, 6.0, 5.0, 5.5, 6.6, 6.1}; // [3, 3,5, 4, 4, 5, 5.5, 6, 6.1, 6.6]
+		double[] arr2 = new double[] {3.0, 4.0, 3.5, 4.0, 6.0, 5.0, 5.5, 6.6, 6.1}; 
 		printStats(arr2);
 		
 		System.out.println();
