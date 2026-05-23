@@ -29,7 +29,7 @@ public class PoorCode {
 		
 		System.out.println();
 		
-		double[] arr2 = new double[] {3.0, 4.0, 3.5, 4.0, 6.0, 5.0, 5.5, 6.6, 6.1};
+		double[] arr2 = new double[] {3.0, 4.0, 3.5, 4.0, 6.0, 5.0, 5.5, 6.6, 6.1}; 
 		printStats(arr2);
 		
 		System.out.println();
@@ -94,27 +94,22 @@ public class PoorCode {
 		return false;
 	}
 	
-	
-	public static void printStats(double[] arr) {
-		
-		double length = (double) arr.length;
-		
-		System.out.println("Length = " + length);
-		
-		double sum = 0.0;
-		for(int i = 0; i < arr.length; i++)
-			sum += arr[i];
-		
-		System.out.println("Sum = " + sum);
-		
-		double n = (double) arr.length;
-		
-		double mean = sum / n;
-		
-		System.out.println("Mean = " + mean);
-		
+	public static double sum(double[] arr) {
+		double sum = 0;
+
+		for (double d: arr) {
+			sum += d;
+		}
+
+		return sum;
+	}
+
+	public static double mean(double sum, int length) {
+		return sum / length;
+	}
+
+	public static double median(double[] arr) {
 		double[] sorted = b(arr);
-		
 		double median;
 		
 		if(sorted.length % 2 == 1)
@@ -122,15 +117,18 @@ public class PoorCode {
 		else
 			median = (sorted[sorted.length/2 - 1] + sorted[sorted.length/2]) / 2.0;
 		
-		System.out.println("Median = " + median);
-		
-		double mode = sorted[0];
+		return median;
+	}
+
+	public static double mode(double[] array) {
+		double[] arr = b(array);
+		double mode = arr[0];
 		int topOccurrences = 0;
-		double currentNumber = sorted[0];
+		double currentNumber = arr[0];
 		int occurrences = 0;
 		
-		for(int i = 0; i < sorted.length; i++) {
-			if(sorted[i] == currentNumber) {
+		for(int i = 0; i < arr.length; i++) {
+			if(arr[i] == currentNumber) {
 				occurrences++;
 				if(occurrences > topOccurrences) {
 					topOccurrences = occurrences;
@@ -138,27 +136,41 @@ public class PoorCode {
 				}
 			}
 			else {
-				currentNumber = sorted[i];
+				currentNumber = arr[i];
 				occurrences = 1;
 			}
 		}
-		
-		System.out.println("Mode = " + mode);
-		
+
+		return mode;
+	}
+
+	public static double variance(double[] arr, double mean) {
 		double variance = 0.0;
-		
+			
 		for(int i = 0; i < arr.length; i++) {
 			double diff = arr[i] - mean;
 			variance += diff * diff;
 		}
-		variance /= length;
-		
-		System.out.println("Variance = " + variance);
-		
+
+		return variance /= arr.length;
+	}
+	
+	public static void printStats(double[] arr) {
+		int length = arr.length;
+		double sum = sum(arr);
+		double mean = mean(sum, length);
+		double median = median(arr);
+		double mode = mode(arr);
+		double variance = variance(arr, mean);
 		double standardDeviation = Math.sqrt(variance);
-		
+
+		System.out.println("Length = " + length);
+		System.out.println("Sum = " + sum);	
+		System.out.println("Mean = " + mean);
+		System.out.println("Median = " + median);
+		System.out.println("Mode = " + mode);
+		System.out.println("Variance = " + variance);
 		System.out.println("Standard Deviation = " + standardDeviation);
-		
 	}
 	
 	public static double[] b(double[] arr) {
